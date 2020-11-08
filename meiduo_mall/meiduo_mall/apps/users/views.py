@@ -337,7 +337,7 @@ class BrowseHistoryView(CreateAPIView):
 
         history_key = 'history_%s' % request.user.id
         # [b'<sku_id>', b'<sku_id>', ...]
-        sku_ids = redis_conn.lrange(history_key, 0, -1)
+        sku_ids = redis_conn.lrange(history_key, 0, 2)
 
         # 2. 根据商品的id获取对应商品的数据
         skus = []
